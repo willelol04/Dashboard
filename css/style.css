@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    box-shadow: 0;
+}
+
+body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: repeat(10, 10vh);
+    grid-template-areas: 
+    "dash menu"
+    "dash menu"
+    "dash main"
+    "dash main"
+    "dash main"
+    "dash main"
+    "dash main"
+    "dash main"
+    "dash main"
+    "dash main";
+}
+
+nav {
+    grid-area: dash;
+    background: blue;
+}
+
+.menu {
+    grid-area: menu;
+    background: grey;
+}
+
+.main {
+    grid-area: main;
+    background: white;
+}
