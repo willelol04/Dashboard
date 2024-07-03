@@ -5,13 +5,15 @@
     border: 0;
     box-shadow: 0;
     font-family: Arial;
+    line-height: 1.5;
+    text-decoration: none;
 }
 
 body {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: repeat(10, 10vh);
+    grid-template-rows: repeat(10, 12vh);
     grid-template-areas: 
     "dash menu"
     "dash menu"
@@ -29,15 +31,99 @@ nav {
     grid-area: dash;
     background: #0284c7;
     color: white;
-    padding-left: 30px;
-    padding-top: 30px;
+    font-weight: bolder;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 .menu {
     grid-area: menu;
     background: white;
     box-shadow: 0 4px 2px -2px rgb(170, 169, 169);
-    position: relative;
+    padding: 10px 40px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu .row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.menu .right button {
+    background: #0284c7;
+    color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    
+}
+
+.menu .right button:hover {
+    cursor: pointer;
+}
+
+.menu .left,
+.menu .right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.menu .right {
+    justify-content: flex-end;
+
+}
+
+.menu .left {
+    width: 60%;
+}
+
+.menu .right {
+    width: 40%;
+}
+
+.menu svg:not([class="icon"]) {
+    width: 30px;
+    
+}
+
+.hello-message {
+    flex-basis: 100%;
+    display: inline-block;
+}
+
+.hello-message p,
+.hello-message h1 {
+    vertical-align: middle;
+}
+
+.right .icon {
+    width: 50px;
+}
+
+.left .icon {
+    width: 75px;
+}
+
+.menu .row input {
+    background: #d1d5db;
+    flex: 1;
+    border-radius: 20px;
+    height: 30px;
+    padding: 10px;
+}
+
+nav h1 {
+    font-size: 1.5rem;
+    vertical-align: middle;
+    margin: 0;
 }
 
 .main {
@@ -45,20 +131,39 @@ nav {
     background: #d1d5db;
 }
 
-svg {
+nav svg {
     width: 35px;
     vertical-align: middle;
     fill: white;
+    margin-right: 10px;
+    
 }
 
 nav ul {
     list-style-type: none;
+    font-size: 0.9rem;
+    display: grid;
+    gap: 8px;
+    grid-template-rows: repeat(11, 1fr);
+
 }
 
-nav li {
-    margin-bottom: 5px;
-}
-nav li:nth-child(6) {
-    margin-bottom: 50px;
+nav a {
+    color: white;
+
 }
 
+nav ul li:nth-last-child(3) {
+    grid-row: 9 / 10;
+
+}
+
+nav ul li:nth-last-child(2) {
+    grid-row: 10 / 11;
+    
+}
+
+nav ul li:nth-last-child(1) {
+    grid-row: 11 / 12;
+    
+}
